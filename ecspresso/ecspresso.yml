@@ -1,0 +1,8 @@
+region: ap-northeast-1
+cluster: cdk-ecspresso
+service: nginx
+service_definition: ecs-service-def.json
+task_definition: ecs-task-def.json
+timeout: "10m0s"
+plugins:
+  - name: ssm

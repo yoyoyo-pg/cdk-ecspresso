@@ -1,0 +1,37 @@
+{
+  "deploymentConfiguration": {
+    "deploymentCircuitBreaker": {
+      "enable": false,
+      "rollback": false
+    },
+    "maximumPercent": 200,
+    "minimumHealthyPercent": 100
+  },
+  "desiredCount": 1,
+  "enableECSManagedTags": false,
+  "healthCheckGracePeriodSeconds": 0,
+  "launchType": "FARGATE",
+  "loadBalancers": [
+    {
+      "containerName": "nginx",
+      "containerPort": 80,
+      "targetGroupArn": "{{ ssm `/ecs/cdk-ecspresso/tg-arn` }}"
+    }
+  ],
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "securityGroups": [
+        "{{ ssm `/ecs/cdk-ecspresso/sg-id` }}"
+      ],
+      "subnets": [
+        "{{ ssm `/ecs/cdk-ecspresso/subnet-id-a` }}",
+        "{{ ssm `/ecs/cdk-ecspresso/subnet-id-c` }}"
+      ]
+    }
+  },
+  "placementConstraints": [],
+  "placementStrategy": [],
+  "platformVersion": "LATEST",
+  "schedulingStrategy": "REPLICA",
+  "serviceRegistries": []
+}
