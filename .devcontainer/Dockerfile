@@ -7,4 +7,4 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
   && rm -rf ./aws awscliv2.zip \
   && npm -g install typescript \
   && npm install -g aws-cdk \
-  && npm install -g npm-check-updates
+  && npm install
