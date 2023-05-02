@@ -5,7 +5,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
   && unzip awscliv2.zip \
   && ./aws/install \
   && rm -rf ./aws awscliv2.zip \
-  && npm -g install typescript \
+  && npm install -g typescript \
   && npm install -g aws-cdk \
   && npm install -g npm-check-updates
 RUN curl -sL -O https://github.com/kayac/ecspresso/releases/download/v2.0.0/ecspresso_2.0.0_linux_amd64.tar.gz \
