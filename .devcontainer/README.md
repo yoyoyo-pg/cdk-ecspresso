@@ -27,5 +27,5 @@ AdministratorAccessのあるIAMユーザー
 ### 削除手順
 
 - AWSのコンソール上からnginxサービスを0にします。
-- `ecspresso delete`を実行後、サービス名を聞かれるのでnginxと入力しEnter
+- `ecspresso delete`を実行後、サービス名を聞かれるので`nginx`と入力しEnter
 - `cd ../`の後`cdk destroy CdkEcspressoStack`を選択し、確認で`y`を選択しEnter
